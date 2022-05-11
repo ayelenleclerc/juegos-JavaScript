@@ -1,6 +1,15 @@
-function encriptar() {
-  let mensajeVacio = document.getElementById("mensajeVacio");
-  let copiarBtn = document.getElementById("copiarBtn");
+const inputUsuario = document.getElementById("inputUsuario");
+const mostrarMensaje = document.getElementById("mostrarMensaje");
+const copiarBtn = document.getElementById("copiarBtn");
+const mensajeVacio = document.getElementById("mensajeVacio");
+const ocultarMensajeVacio = document.getElementById("ocultarMensajeVacio");
+const ocultarBtnCopiar = document.getElementById("ocultarBtnCopiar");
+const encriptar = document.getElementById("encriptar");
+const desencriptar = document.getElementById("desencriptar");
+const copiarTexto = document.getElementById("copiarBtn");
+const pegarTexto = document.getElementById("pegarBtn");
+
+encriptar.addEventListener("click", function () {
   mensajeVacio.classList.remove("mostrarMensajeVacio");
   mensajeVacio.classList.add("ocultarMensajeVacio");
   copiarBtn.classList.remove("ocultarBtnCopiar");
@@ -13,11 +22,10 @@ function encriptar() {
     .replace(/u/g, "ufat")
     .replace(/a/g, "ai");
   document.getElementById("mostrarMensaje").innerHTML = encriptar;
-}
+  inputUsuario = document.getElementById("inputUsuario").value = "";
+});
 
-function desencriptar() {
-  let mensajeVacio = document.getElementById("mensajeVacio");
-  let copiarBtn = document.getElementById("copiarBtn");
+desencriptar.addEventListener("click", function () {
   mensajeVacio.classList.remove("mostrarMensajeVacio");
   mensajeVacio.classList.add("ocultarMensajeVacio");
   copiarBtn.classList.remove("ocultarBtnCopiar");
@@ -30,13 +38,11 @@ function desencriptar() {
     .replace(/ai/g, "a")
     .replace(/ufat/g, "u");
   document.getElementById("mostrarMensaje").innerHTML = desencriptar;
-}
+  inputUsuario = document.getElementById("inputUsuario").value = "";
+});
 
-function copiarTexto() {
+copiarTexto.addEventListener("click", function () {
   let textoCopiado = document.getElementById("mostrarMensaje");
-
   textoCopiado.select();
-  textoCopiado.setSelectionRange(0, 99999);
-
-  navigator.clipboard.writeText(textoCopiado.value);
-}
+  document.execCommand("copy");
+});

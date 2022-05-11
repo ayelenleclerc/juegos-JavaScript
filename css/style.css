@@ -12,8 +12,7 @@
         sans-serif;
 }
 
-.index-fondo {
-    background-image: url(../img/work-play.jpg);
+.fondo {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,44 +21,25 @@
     position: relative;
 }
 
+.index-fondo {
+    background-image: url(../img/work-play.jpg);
+}
+
 /* ADIVINADOR */
 .adivinador-fondo {
-    width: 100vw;
-    height: 100vh;
     background-image: url("../img/adivinador/fondoAdivinador.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 1;
 }
 
 /* MEMOTEST */
 .memotest-fondo {
-    width: 100vw;
-    height: 100vh;
     background-image: url("../img/memotest/fondoTexturaGris.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 1;
-    font-family: 'Inter',
-        sans-serif;
-
 }
 
 /* ENCRIPTADOR */
 
-.container {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 60px auto 60px;
-    height: 100vh;
-
-}
 
 /* HEADER Y NAV */
 .header {
-    grid-row: 1/2;
     position: sticky;
     width: 100%;
     height: 60px;
@@ -67,58 +47,30 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-.navbar {
-    display: flex;
-    width: 100%;
-    height: 50px;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-}
-
-.navbar__ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-direction: row;
-    align-content: center;
-    justify-content: flex-end;
-}
-
-.navbar__li {
-    padding: 10px;
-}
-
-.navbar__a {
+.nav-texto {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
     color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.navbar__a-encrip {
-    color: #000000;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 /* INDEX */
 
 .index-main {
-    grid-row: 2/3;
+
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-.index-title {
+.main-title {
     font-family: 'Ubuntu', sans-serif;
     font-size: 2.5rem;
     font-weight: bold;
@@ -128,6 +80,7 @@
 }
 
 .card-index {
+    position: relative;
     display: flex;
     width: 250px;
     height: 350px;
@@ -149,16 +102,18 @@
     padding-top: 20px;
 }
 
-.giphy-embed {
-    width: 50%;
-    height: 50%;
-    position: relative;
-    overflow: hidden;
-    margin-left: 25%;
+.card-index__img {
+    position: absolute;
+    top: 50px;
+    width: 150px;
+    height: 150px;
+    align-self: center;
 }
 
 .card-index__p {
-    font-size: 1.1rem;
+    position: absolute;
+    top: 58%;
+    font-size: 1rem;
     font-weight: 400;
     color: #070707;
     text-align: center;
@@ -166,7 +121,10 @@
 }
 
 .btn-jugar {
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
     background-color: #0c0c0c;
     color: #fff;
     border: none;
@@ -182,6 +140,113 @@
 }
 
 /* ADIVINADOR */
+
+.adivinador-main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.adivinador {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: center;
+    margin: 12% 0;
+
+}
+
+.btn-inicioAdivinador {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    color: #fff;
+    background-color: #b30ce6;
+    border: none;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+.hide {
+
+    display: none;
+}
+
+.adivinador-input {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: center;
+    margin: 12% 0;
+    display: none;
+    transition: all 0.
+}
+
+.adivinadorNumber-input {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #a217de;
+    resize: none;
+    outline: none;
+    background-color: #f7f5f7;
+    padding: 10px;
+}
+
+.adivinador-input p {
+    position: relative;
+    font-size: 1.5rem;
+    color: #fff;
+    bottom: 9rem;
+    padding: 1rem;
+}
+
+
+.adivinador-resultado {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: center;
+    margin: 12% 0;
+    display: none;
+    transition: all 0.5s;
+}
+
+.resultado-Adivinador p {
+    font-size: 3rem;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.show {
+    display: flex;
+}
 
 /* MEMOTEST */
 
@@ -219,7 +284,7 @@
     color: rgb(201, 186, 242);
 }
 
-/* RAMKING */
+/* RANKING */
 
 .ranking-fondo {
     width: 100vw;
@@ -248,13 +313,14 @@
 /* FOOTER */
 
 footer {
-    grid-row: 3/4;
+    position: absolute;
+    bottom: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 2.4rem;
-    width: 100%;
+    width: 95%;
     height: 60px;
     background: transparent;
     padding: 20px;
@@ -267,4 +333,40 @@ footer {
 footer a {
     font-size: 1rem;
     color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    .fondo {
+        height: 100%;
+    }
+
+    .fondoAdivinador {
+        height: 100vh;
+    }
+
+    .btn-inicioAdivinador {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        font-size: 1.5rem;
+    }
+
+    .adivinadorNumber-input {
+        width: 150px;
+        height: 150px;
+        font-size: 3rem;
+    }
+
+    .adivinador-input p {
+        font-size: 1rem;
+        bottom: 5rem;
+        padding: 1rem;
+        margin-bottom: 50px;
+    }
+
+    .resultado-Adivinador p {
+        font-size: 1rem;
+
+    }
+
 }
