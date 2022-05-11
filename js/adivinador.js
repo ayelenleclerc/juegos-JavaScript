@@ -52,6 +52,6 @@ adivinadorInput.addEventListener("keyup", () => {
 });
 // despues de 8 segundos reinicio la pagina para que empiece de nuevo
 
-// setTimeout(() => {
-//   location.reload();
-// }, 10000);
+setTimeout(() => {
+  location.reload();
+}, 10000);
