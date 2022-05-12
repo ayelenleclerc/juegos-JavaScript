@@ -46,8 +46,10 @@ function juego() {
 // defino el evento para que inicie el juego despues de que el usuario ingresa el numero
 let adivinadorInput = document.getElementById("adivinadorInput");
 adivinadorInput.addEventListener("keyup", () => {
-  if (adivinadorInput.value.length === 1) {
+  if (adivinadorInput.value.length === 1 && !isNaN(adivinadorInput.value)) {
     juego();
+  } else {
+    alert("Introduce un número, por favor");
   }
 });
 // despues de 8 segundos reinicio la pagina para que empiece de nuevo
