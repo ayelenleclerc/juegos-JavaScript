@@ -1,3 +1,13 @@
+/* ROOT DE COLORES ENCRIPTADOR */
+:root {
+    --light-blue-100: hsla(227, 60%, 97%, 1);
+    --dark-blue-300: hsl(215, 75%, 25%);
+    --white: hsla(0, 0%, 100%, 1);
+    --gray-500: hsla(210, 10%, 23%, 1);
+    --decoder-btn: hsla(214, 26%, 88%, 1);
+    --gray-400: hsla(210, 9%, 31%, 1);
+}
+
 /* reset */
 
 * {
@@ -37,12 +47,14 @@
 
 /* ENCRIPTADOR */
 
+.encriptador-fondo {
+    background-image: url("../img/encriptador/encriptador-fondo.jpg");
+}
 
 /* HEADER Y NAV */
 .header {
-    position: sticky;
+    position: relative;
     width: 100%;
-    height: 60px;
     background-color: transparent;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
@@ -284,6 +296,161 @@
     color: rgb(201, 186, 242);
 }
 
+/* ENCRIPTADOR */
+.encriptador-main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.encriptador-title {
+    font-family: 'Ubuntu',
+        sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #cccccc;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.text-inputUsuarioEncrip {
+    width: 60%;
+    padding: 16px;
+    height: 500px;
+    margin: 0 auto;
+    border: none;
+    resize: none;
+}
+
+.text-inputUsuarioEncrip,
+.text-inputUsuarioEncrip::placeholder {
+    color: var(--dark-blue-300);
+}
+
+.text-advertenciaEncrip {
+    color: #f7f5f7;
+    font-size: 16px;
+}
+
+.btn {
+    border-radius: 10px;
+    font-size: 24px;
+    width: 300px;
+    padding: 10px;
+    margin-right: 5px;
+    border: 1px solid var(--dark-blue-300);
+
+}
+
+.btn-encriptar {
+    background-color: var(--dark-blue-300);
+    color: var(--light-blue-100)
+}
+
+.btn-desencriptar {
+    background-color: var(--decoder-btn);
+    border: 1px solid var(--dark-blue-300);
+    color: var(--dark-blue-300);
+}
+
+.text-output-sectionEncrip {
+    position: absolute;
+    background-color: #fff;
+    width: 30%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    top: 60px;
+    right: 60px;
+    box-shadow: 2px 2px 20px rgb(0 0 0 / 50%);
+}
+
+
+.text-outputUsuarioEncrip {
+    width: 100%;
+    height: 500px;
+    padding: 16px;
+    background-color: #fff;
+    resize: none;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+}
+
+.mostrarMensajeVacioEncrip {
+    position: relative;
+    display: flex;
+    background-color: #fff;
+    width: 90%;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.mostrarMensajeVacioEncrip h3,
+p {
+    color: var(--dark-blue-300);
+    font-size: 24px;
+    background-color: transparent;
+    text-align: center;
+}
+
+.mostrarMensajeVacioEncrip h3 {
+    font-weight: 700;
+}
+
+.ilustracionEncrip {
+    width: 250px;
+    height: 250px;
+    background-color: #fff;
+}
+
+
+.ocultarMensajeVacioEncrip {
+    display: none;
+}
+
+.ocultarBtnCopiarEncrip {
+    display: none;
+    background: transparent;
+    color: var(--dark-blue-300);
+    border: 1px solid var(--dark-blue-300);
+    margin: 15px auto;
+}
+
+.text-footerEncrip {
+    height: 50px;
+    display: flex;
+    bottom: 0;
+    font-size: 16px;
+    color: var(--dark-blue-300);
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.text-footerEncrip a {
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--dark-blue-300);
+}
+
 /* RANKING */
 
 .ranking-fondo {
@@ -330,16 +497,18 @@ footer {
     align-content: flex-end;
 }
 
-footer a {
+footer p,
+a {
     font-size: 1rem;
     color: #fff;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
     .fondo {
         height: 100%;
     }
 
+    /* adivinador */
     .fondoAdivinador {
         height: 100vh;
     }
@@ -367,6 +536,226 @@ footer a {
     .resultado-Adivinador p {
         font-size: 1rem;
 
+    }
+
+    /* memotest */
+    .memotest-main {
+        height: 100%;
+    }
+
+    .grilla-memotest {
+        width: 100%;
+        position: relative;
+        height: auto;
+        flex-direction: row;
+    }
+
+    .footer-memotest {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        align-content: flex-end;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        position: absolute;
+        bottom: unset;
+    }
+
+    /* encriptador */
+    .encriptador-fondo {
+        height: 100vh;
+    }
+
+    .encriptador-main {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .encriptador-title {
+        font-size: 1.5rem;
+    }
+
+    .text-inputUsuarioEncrip {
+        width: 100%;
+        height: 250px;
+    }
+
+    .btn {
+        display: flex;
+        font-size: 1.2rem;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .btn-encriptar {
+        background-color: var(--dark-blue-300);
+        color: var(--light-blue-100)
+    }
+
+    .btn-desencriptar {
+        background-color: var(--decoder-btn);
+        border: 1px solid var(--dark-blue-300);
+        color: var(--dark-blue-300);
+    }
+
+    .ilustracionEncrip {
+        display: none;
+    }
+
+    .text-output-sectionEncrip {
+        position: relative;
+        width: 100%;
+        height: 275px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        top: 0;
+        right: 0;
+        margin: 5px auto;
+        flex-wrap: nowrap;
+    }
+
+
+    .text-outputUsuarioEncrip {
+        width: 100%;
+        height: 500px;
+        padding: 16px;
+        background-color: #fff;
+        resize: none;
+        border: none;
+        outline: none;
+        border-radius: 15px;
+    }
+
+    .mostrarMensajeVacioEncrip {
+        position: relative;
+        display: flex;
+        background-color: #fff;
+        width: 90%;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 15% auto 0 auto;
+
+    }
+
+    .ocultarBtnCopiarEncrip {
+        margin: 0px auto;
+        position: absolute;
+        bottom: 2px;
+        width: 99%;
+        display: none;
+    }
+
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 1023px) {
+
+    /* encriptador */
+    .encriptador-fondo {
+        height: 100vh;
+    }
+
+    .encriptador-main {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .encriptador-title {
+        font-size: 1.5rem;
+    }
+
+    .text-inputUsuarioEncrip {
+        width: 100%;
+        height: 250px;
+    }
+
+    .btn {
+        display: flex;
+        font-size: 1.2rem;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .btn-encriptar {
+        background-color: var(--dark-blue-300);
+        color: var(--light-blue-100)
+    }
+
+    .btn-desencriptar {
+        background-color: var(--decoder-btn);
+        border: 1px solid var(--dark-blue-300);
+        color: var(--dark-blue-300);
+    }
+
+    .ilustracionEncrip {
+        display: none;
+    }
+
+    .text-output-sectionEncrip {
+        position: relative;
+        width: 100%;
+        height: 275px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        top: 0;
+        right: 0;
+        margin: 5px auto;
+        flex-wrap: nowrap;
+    }
+
+
+    .text-outputUsuarioEncrip {
+        width: 100%;
+        height: 500px;
+        padding: 16px;
+        background-color: #fff;
+        resize: none;
+        border: none;
+        outline: none;
+        border-radius: 15px;
+    }
+
+    .mostrarMensajeVacioEncrip {
+        position: relative;
+        display: flex;
+        background-color: #fff;
+        width: 90%;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 15% auto 0 auto;
+
+    }
+
+    .ocultarBtnCopiarEncrip {
+        margin: 0px auto;
+        position: absolute;
+        bottom: 2px;
+        width: 99%;
+        display: none;
     }
 
 }
