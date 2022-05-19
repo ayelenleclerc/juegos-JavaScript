@@ -27,9 +27,9 @@ const juego3 = new Juego(
 
 const juegos = [juego1, juego2, juego3];
 
-let puntajeAdivinador = [];
-let puntajeMemotest = [];
-let puntajeEncriptador = [];
+let puntajeAdivinador = [0];
+let puntajeMemotest = [0];
+let puntajeEncriptador = [0];
 
 if (localStorage.getItem("puntajeAdivinador")) {
   puntajeAdivinador = JSON.parse(localStorage.getItem("puntajeAdivinador"));
