@@ -479,6 +479,53 @@ p {
     text-align: center;
 }
 
+.card-puntaje {
+    position: relative;
+    display: flex;
+    width: 250px;
+    height: 400px;
+    background-color: #f7f5f7;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 50%);
+    margin: 20px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.card-title__puntaje {
+    font-family: 'Inter',
+        sans-serif;
+    color: #0c0c0c;
+    font-size: 2rem;
+    text-align: center;
+    margin: 10px;
+}
+
+.img-puntaje {
+    position: absolute;
+    top: 50px;
+    width: 150px;
+    height: 150px;
+    align-self: center;
+}
+
+.p-puntaje {
+    position: relative;
+    top: 170px;
+    align-self: center;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.btn-puntaje {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 /* FOOTER */
 
 footer {
