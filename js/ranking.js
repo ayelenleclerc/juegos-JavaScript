@@ -1,112 +1,47 @@
-class Juego {
-  constructor(nombre, descripcion, img, puntaje) {
-    this.nombre = nombre;
-    this.descripcion = descripcion;
-    this.img = img;
-    this.puntaje = puntaje;
-  }
-}
-const juego1 = new Juego(
-  "Adivinador",
-  "Juego de adivinar un numero",
-  "../img/adivinador/giphy-Adivinador.gif",
-  0
-);
-const juego2 = new Juego(
-  "Memotest",
-  "Juego de encontrar el igual",
-  "../img/memotest/giphy-memotest.gif",
-  0
-);
-const juego3 = new Juego(
-  "Encriptador",
-  "Juego de encriptar un mensaje",
-  "../img/encriptador/giphy-encriptador.gif",
-  0
-);
-
-const juegos = [juego1, juego2, juego3];
-
-let puntajeAdivinador = [0];
-let puntajeMemotest = [0];
-let puntajeEncriptador = [0];
-
-if (localStorage.getItem("puntajeAdivinador")) {
-  puntajeAdivinador = JSON.parse(localStorage.getItem("puntajeAdivinador"));
-} else {
-  localStorage.setItem("puntajeAdivinador", JSON.stringify(puntajeAdivinador));
+function capturarStorage() {
+  return JSON.parse(localStorage.getItem("puntajeTotal")) ?? [];
 }
 
-if (localStorage.getItem("puntajeMemotest")) {
-  puntajeMemotest = JSON.parse(localStorage.getItem("puntajeMemotest"));
-} else {
-  localStorage.setItem("puntajeMemotest", JSON.stringify(puntajeMemotest));
+//guardar Storage
+function guardarStorage(juegos) {
+  localStorage.setItem("puntajeTotal", JSON.stringify(juegos));
 }
 
-if (localStorage.getItem("puntajeEncriptador")) {
-  puntajeEncriptador = JSON.parse(localStorage.getItem("puntajeEncriptador"));
-} else {
-  localStorage.setItem(
-    "puntajeEncriptador",
-    JSON.stringify(puntajeEncriptador)
-  );
-}
+// creo las cards de juegos
 
-let rankingCard = document.getElementById("app");
+const rankingCard = document.getElementById("app");
 
-juegos.forEach((juego, indice) => {
-  rankingCard.innerHTML += `
-  <div class="card card-puntaje" id="juego${indice}>
-  <h2 class="card-title__puntaje">${juego.nombre}</h2> 
-      <img src="${juego.img} " class="card-img-top img-puntaje" alt="gif ${juego.nombre} ">
-  <div class="card-body">
-    <p class="card-text p-puntaje">${juego.descripcion} </p>
-    <p class="card-text p-puntaje" id="puntaje${indice}">Puntaje: ${juego.puntaje}</p>
-    <button type="button" class="btn btn-dark btn-puntaje" id="boton${indice}"> Puntuar </button>
-  </div>
-</div> `;
-});
-
-juegos.forEach((juego, indice) => {
-  let botonPuntaje = document.getElementById(`boton${indice}`);
-  botonPuntaje.addEventListener("click", () => {
-    let puntaje = juego.puntaje + 1;
-    juego.puntaje = puntaje;
-    switch (indice) {
-      case 0:
-        localStorage.setItem("puntajeAdivinador", JSON.stringify(puntaje));
-        break;
-      case 1:
-        localStorage.setItem("puntajeMemotest", JSON.stringify(puntaje));
-        break;
-      case 2:
-        localStorage.setItem("puntajeEncriptador", JSON.stringify(puntaje));
-        break;
-    }
-  });
-});
-
-function capturarPuntajesLocalStorage() {
+function mostarjuegos(juegos) {
+  rankingCard.innerHTML = "";
   juegos.forEach((juego, indice) => {
-    let puntajeLocal = document.getElementById(`puntaje${indice}`);
-    switch (indice) {
-      case 0:
-        puntajeLocal.innerHTML = `Puntaje: ${parseInt(
-          JSON.parse(localStorage.getItem("puntajeAdivinador"))
-        )}`;
-        break;
-      case 1:
-        puntajeLocal.innerHTML = `Puntaje: ${parseInt(
-          JSON.parse(localStorage.getItem("puntajeMemotest"))
-        )}`;
-        break;
-      case 2:
-        puntajeLocal.innerHTML = `Puntaje: ${parseInt(
-          JSON.parse(localStorage.getItem("puntajeEncriptador"))
-        )}`;
-        break;
-    }
+    rankingCard.innerHTML += `
+     <div class="card card-puntaje" id="juego${indice}>
+        <h2 class="card-title__puntaje">${juego.nombre}</h2> 
+        <img src="${juego.img} " class="card-img-top img-puntaje" alt="gif ${juego.nombre} ">
+        <div class="card-body">
+           <p class="card-text p-puntaje">${juego.descripcion} </p>
+           <p class="card-text p-puntaje" id="puntaje${indice}">Puntos: ${juego.puntaje}</p>
+            <button type="button" class="btn btn-dark btn-puntaje" id="boton${indice}"> Puntuar </button>
+        </div>
+    </div> `;
   });
 }
 
-capturarPuntajesLocalStorage();
+// capturo el puntaje del juego
+function capturarPuntaje() {
+  juegos.forEach((juego, indice) => {
+    let botonPuntaje = document.getElementById(`boton${indice}`);
+    botonPuntaje.addEventListener("click", () => {
+      let puntaje = juego.puntaje + 1;
+      juego.puntaje = parseInt(puntaje);
+      puntaje = document.getElementById(`puntaje${indice}`);
+      puntaje.innerHTML = `Puntos: ${juego.puntaje}`;
+      guardarStorage(juegos);
+    });
+  });
+}
+
+mostarjuegos(juegos);
+capturarPuntaje();
+capturarStorage();
+guardarStorage(juegos);

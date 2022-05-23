@@ -1,101 +1,34 @@
-const listaCartas = [
-  {
-    nombre: "ballena",
-    img: "../img/memotest/ballena.png",
-  },
-  {
-    nombre: "caballo",
-    img: "../img/memotest/caballo.png",
-  },
-  {
-    nombre: "erizo",
-    img: "../img/memotest/erizo.png",
-  },
-  {
-    nombre: "gallo",
-    img: "../img/memotest/gallo.png",
-  },
-  {
-    nombre: "gato",
-    img: "../img/memotest/gato.png",
-  },
-  {
-    nombre: "gorila",
-    img: "../img/memotest/gorila.png",
-  },
-  {
-    nombre: "leon",
-    img: "../img/memotest/leon.png",
-  },
-  {
-    nombre: "paloma ",
-    img: "../img/memotest/paloma.png",
-  },
-  {
-    nombre: "pavoReal",
-    img: "../img/memotest/pavoReal.png",
-  },
-  {
-    nombre: "perro",
-    img: "../img/memotest/perro.png",
-  },
-  {
-    nombre: "tortuga",
-    img: "../img/memotest/tortuga.png",
-  },
-  {
-    nombre: "vaca",
-    img: "../img/memotest/vaca.png",
-  },
-  {
-    nombre: "ballena",
-    img: "../img/memotest/ballena.png",
-  },
-  {
-    nombre: "caballo",
-    img: "../img/memotest/caballo.png",
-  },
-  {
-    nombre: "erizo",
-    img: "../img/memotest/erizo.png",
-  },
-  {
-    nombre: "gallo",
-    img: "../img/memotest/gallo.png",
-  },
-  {
-    nombre: "gato",
-    img: "../img/memotest/gato.png",
-  },
-  {
-    nombre: "gorila",
-    img: "../img/memotest/gorila.png",
-  },
-  {
-    nombre: "leon",
-    img: "../img/memotest/leon.png",
-  },
-  {
-    nombre: "paloma ",
-    img: "../img/memotest/paloma.png",
-  },
-  {
-    nombre: "pavoReal",
-    img: "../img/memotest/pavoReal.png",
-  },
-  {
-    nombre: "perro",
-    img: "../img/memotest/perro.png",
-  },
-  {
-    nombre: "tortuga",
-    img: "../img/memotest/tortuga.png",
-  },
-  {
-    nombre: "vaca",
-    img: "../img/memotest/vaca.png",
-  },
-];
+class Carta {
+  constructor(nombre, img) {
+    this.nombre = nombre;
+    this.img = img;
+  }
+}
+const listaCartas = [];
+listaCartas.push(new Carta("ballena", "../img/memotest/ballena.png"));
+listaCartas.push(new Carta("caballo", "../img/memotest/caballo.png"));
+listaCartas.push(new Carta("erizo", "../img/memotest/erizo.png"));
+listaCartas.push(new Carta("gallo", "../img/memotest/gallo.png"));
+listaCartas.push(new Carta("gato", "../img/memotest/gato.png"));
+listaCartas.push(new Carta("gorila", "../img/memotest/gorila.png"));
+listaCartas.push(new Carta("leon", "../img/memotest/leon.png"));
+listaCartas.push(new Carta("paloma", "../img/memotest/paloma.png"));
+listaCartas.push(new Carta("perro", "../img/memotest/perro.png"));
+listaCartas.push(new Carta("pavoReal", "../img/memotest/pavoReal.png"));
+listaCartas.push(new Carta("tortuga", "../img/memotest/tortuga.png"));
+listaCartas.push(new Carta("vaca", "../img/memotest/vaca.png"));
+listaCartas.push(new Carta("ballena", "../img/memotest/ballena.png"));
+listaCartas.push(new Carta("caballo", "../img/memotest/caballo.png"));
+listaCartas.push(new Carta("erizo", "../img/memotest/erizo.png"));
+listaCartas.push(new Carta("gallo", "../img/memotest/gallo.png"));
+listaCartas.push(new Carta("gato", "../img/memotest/gato.png"));
+listaCartas.push(new Carta("gorila", "../img/memotest/gorila.png"));
+listaCartas.push(new Carta("leon", "../img/memotest/leon.png"));
+listaCartas.push(new Carta("paloma", "../img/memotest/paloma.png"));
+listaCartas.push(new Carta("perro", "../img/memotest/perro.png"));
+listaCartas.push(new Carta("pavoReal", "../img/memotest/pavoReal.png"));
+listaCartas.push(new Carta("tortuga", "../img/memotest/tortuga.png"));
+listaCartas.push(new Carta("vaca", "../img/memotest/vaca.png"));
 
 listaCartas.sort(() => 0.5 - Math.random());
 
@@ -132,7 +65,11 @@ function verificarCarta() {
       "src",
       "../img/memotest/veredaCuadrados.jpg"
     );
-    alert("¡Ha hecho clic en la misma imagen!");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "¡Ha hecho clic en la misma imagen!",
+    });
   } else if (cartaElegida[0] === cartaElegida[1]) {
     // alert("Encontraste el par!");
     cartas[opcionUnoId].setAttribute("src", "../img/memotest/blanco.svg");
@@ -150,7 +87,6 @@ function verificarCarta() {
       "src",
       "../img/memotest/veredaCuadrados.jpg"
     );
-    // alert("No encontraste el par, vuelve a intentarlo!");
   }
 
   cartaElegida = [];
@@ -172,8 +108,15 @@ function seleccionarCarta() {
 // terminar el juego
 function terminarJuego() {
   if (cartasGanadas.length == listaCartas.length / 2) {
-    alert("¡Felicidades! Has ganado el juego!");
-    setTimeout(location.reload(), 1000);
+    Swal.fire({
+      icon: "success",
+      title: "Felicitaciones",
+      text: "Has ganado el juego",
+    });
+
+    setTimeout(function () {
+      location.reload();
+    }, 3000);
   }
 }
 

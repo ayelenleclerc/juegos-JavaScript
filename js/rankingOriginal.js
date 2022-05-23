@@ -73,3 +73,84 @@ function preguntarPuntajes() {
 saludo();
 preguntarPuntajes();
 */
+let juegos = [];
+
+class Juego {
+  constructor(nombre, descripcion, img, puntaje) {
+    this.nombre = nombre;
+    this.descripcion = descripcion;
+    this.img = img;
+    this.puntaje = puntaje;
+  }
+}
+
+const juego1 = new Juego(
+  "Adivinador",
+  "Juego de adivinar un numero",
+  "../img/adivinador/giphy-Adivinador.gif",
+  "0"
+);
+const juego2 = new Juego(
+  "Memotest",
+  "Juego de encontrar el igual",
+  "../img/memotest/giphy-memotest.gif",
+  "0"
+);
+const juego3 = new Juego(
+  "Encriptador",
+  "Juego de encriptar un mensaje",
+  "../img/encriptador/giphy-encriptador.gif",
+  "0"
+);
+
+juegos.push(juego1);
+juegos.push(juego2);
+juegos.push(juego3);
+
+let puntajeTotal = localStorage.getItem("puntajeTotal");
+
+if (puntajeTotal) {
+  puntajeTotal = puntajeTotal;
+} else {
+  JSON.stringify(
+    localStorage.setItem("puntajeTotal", [
+      juego1.puntaje,
+      juego2.puntaje,
+      juego3.puntaje,
+    ])
+  );
+}
+
+// CREO LAS CARDS PARA LOS JUEGOS
+let rankingCard = document.getElementById("app");
+
+juegos.forEach((juego, indice) => {
+  rankingCard.innerHTML += `
+  <div class="card card-puntaje" id="juego${indice}>
+  <h2 class="card-title__puntaje">${juego.nombre}</h2> 
+      <img src="${juego.img} " class="card-img-top img-puntaje" alt="gif ${
+    juego.nombre
+  } ">
+  <div class="card-body">
+    <p class="card-text p-puntaje">${juego.descripcion} </p>
+    <p class="card-text p-puntaje" id="puntaje${indice}">Puntaje: ${localStorage.getItem(
+    "puntajeTotal"
+  )}</p>
+    <button type="button" class="btn btn-dark btn-puntaje" id="boton${indice}"> Puntuar </button>
+  </div>
+</div> `;
+});
+
+//CAPTURO EL PUNTAJE DEL JUEGO
+function capturarPuntaje() {
+  juegos.forEach((juego, indice) => {
+    let botonPuntaje = document.getElementById(`boton${indice}`);
+    botonPuntaje.addEventListener("click", () => {
+      let puntaje = juego.puntaje + 1;
+      juego.puntaje = puntaje;
+      localStorage.setItem("puntajeTotal", puntaje);
+    });
+  });
+}
+capturarPuntaje();
+// document.getElementById(`puntaje${indice}`).innerHTML = `Puntaje: ${puntaje}`;

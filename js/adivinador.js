@@ -49,7 +49,13 @@ adivinadorInput.addEventListener("keyup", () => {
   if (adivinadorInput.value.length === 1 && !isNaN(adivinadorInput.value)) {
     juego();
   } else {
-    alert("Introduce un número, por favor");
+    Swal.fire({
+      position: "top-end",
+      icon: "error",
+      title: "Por favor ingresa un número",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   }
 });
 // despues de 8 segundos reinicio la pagina para que empiece de nuevo
