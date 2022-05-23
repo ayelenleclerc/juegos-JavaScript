@@ -72,7 +72,7 @@ function preguntarPuntajes() {
 }
 saludo();
 preguntarPuntajes();
-*/
+
 let juegos = [];
 
 class Juego {
@@ -154,3 +154,4 @@ function capturarPuntaje() {
 }
 capturarPuntaje();
 // document.getElementById(`puntaje${indice}`).innerHTML = `Puntaje: ${puntaje}`;
+*/
