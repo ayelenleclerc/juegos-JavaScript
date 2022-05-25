@@ -22,13 +22,18 @@
         sans-serif;
 }
 
+.main {
+    min-height: 100%;
+}
+
 .fondo {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: relative;
+    min-height: 100vh;
 }
 
 .index-fondo {
@@ -49,6 +54,13 @@
 
 .encriptador-fondo {
     background-image: url("../img/encriptador/encriptador-fondo.jpg");
+}
+
+/* AHORCADO */
+
+.ahorcado-fondo {
+    background-image: url("../img/ahorcado/fondo.png");
+
 }
 
 /* RANKING */
@@ -263,6 +275,14 @@
 }
 
 /* MEMOTEST */
+.header__title {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #cccccc;
+    text-align: center;
+    padding-top: 20px;
+}
 
 .memotest-main,
 .puntuacion-memotest {
@@ -310,7 +330,7 @@
     align-items: center;
 }
 
-.encriptador-title {
+.header__title {
     font-family: 'Ubuntu',
         sans-serif;
     font-size: 2.5rem;
@@ -511,6 +531,14 @@ p {
 
 }
 
+.ranking-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .ranking {
     font-family: 'Inter',
         sans-serif;
@@ -528,15 +556,21 @@ p {
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgb(0 0 0 / 50%);
     margin: 20px;
-    flex-direction: column;
     flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-title__puntaje {
-    font-family: 'Inter',
-        sans-serif;
+
+    color: #0c0c0c;
+    font-size: 2rem;
+    text-align: center;
+    margin: 10px;
+}
+
+.card-title__puntaje {
+
     color: #0c0c0c;
     font-size: 2rem;
     text-align: center;
@@ -551,26 +585,42 @@ p {
     align-self: center;
 }
 
-.p-puntaje {
+.h4-puntaje {
     position: relative;
-    top: 170px;
+    top: 8rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.p-puntaje {
+    position: absolute;
+    top: 20rem;
     align-self: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: black;
+    margin: 0 15%;
 }
 
 .btn-puntaje {
-    width: 100%;
     position: absolute;
+    width: 100%;
+    padding: 0;
     bottom: 0;
     left: 0;
+    height: 40px;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 50%);
 }
 
 /* FOOTER */
 
 footer {
-    position: absolute;
-    bottom: 0;
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -583,7 +633,11 @@ footer {
     font-size: 1rem;
     color: #fff;
     flex-wrap: nowrap;
-    align-content: flex-end;
+    align-content: center;
+}
+
+.footer-encriptador {
+    position: relative;
 }
 
 footer p,
@@ -592,339 +646,496 @@ a {
     color: #fff;
 }
 
-@media screen and (max-width: 1024px) {
-    .fondo {
-        height: 100vh;
+@media screen and (max-width:320px) {
+
+    /* INDEX */
+    .main-title {
+        font-size: 2rem;
     }
 
-    /* adivinador */
-    .fondoAdivinador {
-        height: 100vh;
-    }
-
-    .btn-inicioAdivinador {
-        position: relative;
-        width: 150px;
-        height: 150px;
-        font-size: 1.5rem;
-    }
-
-    .adivinadorNumber-input {
-        width: 150px;
-        height: 150px;
-        font-size: 3rem;
+    /* ADIVINADOR */
+    .main-adivinador {
+        min-height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
 
     .adivinador-input p {
         font-size: 1rem;
-        bottom: 5rem;
-        padding: 1rem;
-        margin-bottom: 50px;
+        top: 8rem;
     }
 
     .resultado-Adivinador p {
-        font-size: 1rem;
-
+        font-size: 1.5rem;
     }
 
-    /* memotest */
-    .memotest-main {
-        height: 100%;
-    }
+    /* MEMOTEST */
 
     .grilla-memotest {
-        width: 100%;
+        min-height: 100%;
         position: relative;
-        height: auto;
+        top: 26rem;
+        max-width: 320px;
+        display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+
+    .memotest-container {
+        display: flex;
+        position: absolute;
+        height: 100vh;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+
+
+    /* ENCRIPTADOR */
+
+
+    .text-inputUsuarioEncrip {
+        width: 100%;
+        height: 200px
+    }
+
+    .text-output-sectionEncrip {
+        position: relative;
+        width: 100%;
+        height: 350px;
+        right: 0;
+    }
+
+    .btn {
+        font-size: 1rem;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .text-outputUsuarioEncrip {
+        width: 100%;
+        height: 250px;
+        padding: 16px;
+        margin: 0;
+    }
+
+    .mostrarMensajeVacioEncrip {
+        position: relative;
+        width: 90%;
+        height: 350px;
+        margin: 0 auto;
+    }
+
+    .ilustracionEncrip {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+
+    .mostrarMensajeVacioEncrip h3,
+    p {
+        font-size: 20px;
+        background-color: transparent;
+        text-align: center;
+    }
+
+
+    .ocultarBtnCopiarEncrip {
+        margin: 0 auto;
+    }
+
+
+    /* RANKING STAR */
+
+    .star-encriptador,
+    .star-memotest {
+        display: none;
+    }
+
+    /* RANKING */
+
+    .ranking-fondo {
+        width: 100vw;
+        height: 100vh;
+        background-color: #0c0c0c;
+
+    }
+
+    .header__title-ranking {
+        font-family: 'Inter',
+            sans-serif;
+        color: #fff;
+        font-size: 3rem;
+        text-align: center;
+
+    }
+
+    .ranking-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .ranking {
+        font-family: 'Inter',
+            sans-serif;
+        color: #fff;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .card-puntaje {
+        width: 200px;
+        height: 350px;
+        margin: 10px;
+    }
+
+    .card-title__puntaje {
+
+        color: #0c0c0c;
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .card-title__puntaje {
+
+        color: #0c0c0c;
+        font-size: 1rem;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .img-puntaje {
+        position: absolute;
+        top: 50px;
+        width: 100px;
+        height: 100px;
+        align-self: center;
+    }
+
+    .h4-puntaje {
+        position: relative;
+        top: 8rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0px auto;
+    }
+
+    .p-puntaje {
+        position: absolute;
+        top: 17rem;
+        align-self: center;
+        font-size: 1rem;
+        color: black;
+        margin: 0 15%;
+    }
+
+    .btn-puntaje {
+        position: absolute;
+        width: 100%;
+        padding: 0;
+        bottom: 0;
+        left: 0;
+        height: 40px;
+        box-shadow: 0px 0px 10px rgb(0 0 0 / 50%);
+    }
+
+    /* FOOTER */
+    .footer-encriptador {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: flex-end;
+        flex-wrap: wrap;
+        flex-direction: row;
+        bottom: -4rem;
+    }
+
+    .footer-encriptador__a {
+        color: #000000;
     }
 
     .footer-memotest {
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        align-content: flex-end;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        position: absolute;
-        bottom: unset;
-    }
-
-    /* encriptador */
-
-
-    .encriptador-main {
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
-
-    .encriptador-title {
-        font-size: 1.5rem;
-    }
-
-    .text-inputUsuarioEncrip {
-        width: 100%;
-        height: 250px;
-    }
-
-    .btn {
-        display: flex;
-        font-size: 1.2rem;
-        width: 100%;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 0;
-    }
-
-    .btn-encriptar {
-        background-color: var(--dark-blue-300);
-        color: var(--light-blue-100)
-    }
-
-    .btn-desencriptar {
-        background-color: var(--decoder-btn);
-        border: 1px solid var(--dark-blue-300);
-        color: var(--dark-blue-300);
-    }
-
-    .ilustracionEncrip {
         display: none;
-    }
-
-    .text-output-sectionEncrip {
-        position: relative;
-        width: 100%;
-        height: 275px;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-        border-radius: 15px;
-        top: 0;
-        right: 0;
-        margin: 5px auto;
-        flex-wrap: nowrap;
-    }
-
-
-    .text-outputUsuarioEncrip {
-        width: 100%;
-        height: 500px;
-        padding: 16px;
-        background-color: #fff;
-        resize: none;
-        border: none;
-        outline: none;
-        border-radius: 15px;
-    }
-
-    .mostrarMensajeVacioEncrip {
-        position: relative;
-        display: flex;
-        background-color: #fff;
-        width: 90%;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        margin: 15% auto 0 auto;
-
-    }
-
-    .ocultarBtnCopiarEncrip {
-        margin: 0px auto;
-        position: absolute;
-        bottom: 2px;
-        width: 99%;
-        display: none;
-    }
-
-    /* RANKING STAR */
-    .ranking-star {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .star-style {
-        margin-top: 10px;
-        height: 25px;
-        width: 25px;
-        padding-right: 2px;
-    }
-
-    .star-container span {
-        position: relative;
-        font-size: 1rem;
-        color: #fff;
-        text-transform: uppercase;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .mostrar-valorStar {
-        margin-top: 5px;
-        font-size: 30px;
-        font-weight: bold;
-        text-align: center;
     }
 
     footer {
-        position: absolute;
-        bottom: 0;
-
+        position: relative;
     }
+
+    footer p,
+    a {
+        font-size: 0.8rem;
+    }
+
 }
 
-@media screen and (min-width: 601px) and (max-width: 1023px) {
+@media screen and (min-width: 321px) and (max-width:480px) {
 
-    /* encriptador */
-
-
-    .encriptador-main {
-        flex-direction: column;
-        flex-wrap: nowrap;
+    /* INDEX */
+    .main-title {
+        font-size: 2rem;
     }
 
-    .encriptador-title {
+    /* ADIVINADOR */
+    .main-adivinador {
+        min-height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .adivinador-input p {
+        font-size: 1rem;
+        top: 8rem;
+    }
+
+    .resultado-Adivinador p {
         font-size: 1.5rem;
     }
 
-    .text-inputUsuarioEncrip {
-        width: 100%;
-        height: 250px;
+    /* MEMOTEST */
+    .grilla-memotest {
+        min-height: 100%;
+        position: relative;
+        top: 0rem;
+        max-width: 480px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
-    .btn {
+
+    .memotest-container {
         display: flex;
-        font-size: 1.2rem;
-        width: 100%;
+        position: absolute;
+        height: 100vh;
         flex-direction: column;
         flex-wrap: nowrap;
         align-content: center;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 0;
+        justify-content: flex-start;
+        align-items: baseline;
     }
 
-    .btn-encriptar {
-        background-color: var(--dark-blue-300);
-        color: var(--light-blue-100)
-    }
 
-    .btn-desencriptar {
-        background-color: var(--decoder-btn);
-        border: 1px solid var(--dark-blue-300);
-        color: var(--dark-blue-300);
-    }
+    /* ENCRIPTADOR */
 
-    .ilustracionEncrip {
-        display: none;
+
+    .text-inputUsuarioEncrip {
+        width: 100%;
+        height: 200px
     }
 
     .text-output-sectionEncrip {
         position: relative;
         width: 100%;
-        height: 275px;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-        border-radius: 15px;
-        top: 0;
+        height: 350px;
         right: 0;
-        margin: 5px auto;
-        flex-wrap: nowrap;
+    }
+
+    .btn {
+        font-size: 1rem;
+        width: 100%;
+        padding: 10px;
     }
 
     .text-outputUsuarioEncrip {
         width: 100%;
-        height: 500px;
+        height: 250px;
         padding: 16px;
-        background-color: #fff;
-        resize: none;
-        border: none;
-        outline: none;
-        border-radius: 15px;
+        margin: 0;
     }
 
     .mostrarMensajeVacioEncrip {
         position: relative;
-        display: flex;
-        background-color: #fff;
         width: 90%;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        margin: 15% auto 0 auto;
+        height: 350px;
+        margin: 0 auto;
     }
 
-    .ocultarBtnCopiarEncrip {
-        margin: 0px auto;
-        position: absolute;
-        bottom: 2px;
-        width: 99%;
-        display: none;
+    .ilustracionEncrip {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
     }
 
-    /* RANKING STAR */
-    .ranking-star {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .star-style {
-        margin-top: 10px;
-        height: 40px;
-        width: 40px;
-        padding-right: 2px;
-    }
-
-    .star-container span {
-        position: relative;
-        font-size: 1rem;
-        color: #fff;
-        text-transform: uppercase;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .mostrar-valorStar {
-        margin-top: 5px;
-        font-size: 30px;
-        font-weight: bold;
+    .mostrarMensajeVacioEncrip h3,
+    p {
+        font-size: 20px;
+        background-color: transparent;
         text-align: center;
     }
 
-    footer {
-        position: absolute;
-        bottom: 0;
 
+    .ocultarBtnCopiarEncrip {
+        margin: 0 auto;
+    }
+
+
+    /* RANKING STAR */
+
+
+
+    .ranking-star {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        height: 12%;
+    }
+
+    .star-encriptador {
+        display: none;
+    }
+
+    /* RANKING */
+
+    .ranking-fondo {
+        width: 100vw;
+        height: 100vh;
+        background-color: #0c0c0c;
+
+    }
+
+    .header__title-ranking {
+        font-family: 'Inter',
+            sans-serif;
+        color: #fff;
+        font-size: 3rem;
+        text-align: center;
+
+    }
+
+    .ranking-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .ranking {
+        font-family: 'Inter',
+            sans-serif;
+        color: #fff;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .card-puntaje {
+        position: relative;
+        display: flex;
+        width: 250px;
+        height: 400px;
+        background-color: #f7f5f7;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgb(0 0 0 / 50%);
+        margin: 20px;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-title__puntaje {
+
+        color: #0c0c0c;
+        font-size: 2rem;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .card-title__puntaje {
+
+        color: #0c0c0c;
+        font-size: 2rem;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .img-puntaje {
+        position: absolute;
+        top: 50px;
+        width: 150px;
+        height: 150px;
+        align-self: center;
+    }
+
+    .h4-puntaje {
+        position: relative;
+        top: 8rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0px auto;
+    }
+
+    .p-puntaje {
+        position: absolute;
+        top: 20rem;
+        align-self: center;
+        font-size: 1.5rem;
+        color: black;
+        margin: 0 15%;
+    }
+
+    .btn-puntaje {
+        position: absolute;
+        width: 100%;
+        padding: 0;
+        bottom: 0;
+        left: 0;
+        height: 40px;
+        box-shadow: 0px 0px 10px rgb(0 0 0 / 50%);
+    }
+
+    /* FOOTER */
+    footer {
+        position: relative;
+    }
+
+    footer p,
+    a {
+        font-size: 0.8rem;
+    }
+
+    .footer-encriptador {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: flex-end;
+        flex-wrap: wrap;
+        flex-direction: row;
+        bottom: -4rem;
+    }
+
+    .footer-encriptador__a {
+        color: #000000;
+    }
+
+    .footer-memotest {
+        position: absolute;
+        bottom: -36rem;
     }
 }

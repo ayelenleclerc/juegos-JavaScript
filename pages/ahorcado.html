@@ -32,7 +32,7 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item ">
-                                <a class="nav-link active" href="./adivinador.html">Adivinador</a>
+                                <a class="nav-link " href="./adivinador.html">Adivinador</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./memotest.html">Memotest</a>
@@ -41,7 +41,7 @@
                                 <a class="nav-link" href="./encriptador.html">Encriptador</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./ahorcado.html">Ahorcado</a>
+                                <a class="nav-link active" href="./ahorcado.html">Ahorcado</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./ranking.html">Ranking</a>
@@ -53,11 +53,22 @@
         </header>
         <main>
             <div class="ahorcado-main">
-                <h1 class="header__title-ahorcado">Ahoracado</h1>
+                <h1 class="header__title">Ahoracado</h1>
             </div>
-            <div id="app" class="row"></div>
+            <div id="ahorcado-app" class="row"></div>
+            <img id="imagen" src="../img/ahorcado/img0.png" alt="Ahorcado" />
+            <div>
+                <p id="palabra_a_adivinar">
+                </p>
+                <button id="jugar">Obtener palabra</button>
+
+                <p id="resultado"></p>
 
 
+                <section class="ranking-star">
+                    <div class="star-container" id="stars"><span>Puntuame: </span></div>
+                    <div class="mostrar-valorStar" id="star-valor"></div>
+                </section>
         </main>
         <footer>
             <p>&copy; Copyright 2022 - <a href="https://github.com/ayelenleclerc">Ayelen Leclerc</a>
@@ -70,6 +81,7 @@
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
     <!-- Mis scripts -->
+
     <script src="../js/star-ranking.js"></script>
     <script src="../js/ahorcado.js"></script>
 

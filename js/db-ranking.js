@@ -19,7 +19,7 @@ const juegos = [
   },
   {
     nombre: "Ahorcado",
-    descripcion: "Juego del ahorcado",
+    descripcion: "Juego del Ahorcado",
     img: "../img/ahorcado/giphy-ahorcado.gif",
     puntaje: "0",
   },

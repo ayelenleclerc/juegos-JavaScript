@@ -9,13 +9,13 @@ const rankingCard = document.getElementById("app");
 rankingCard.innerHTML = "";
 juegos.forEach((juego, indice) => {
   rankingCard.innerHTML += `
-     <div class="card card-puntaje" id="juego${indice}>
+     <div class="card card-puntaje" id="juego${indice}">
         <h2 class="card-title__puntaje">${juego.nombre}</h2> 
         <img src="${juego.img} " class="card-img-top img-puntaje" alt="gif ${
     juego.nombre
   } ">
         <div class="card-body">
-           <p class="card-text p-puntaje">${juego.descripcion} </p>
+           <h4 class="card-text h4-puntaje">${juego.descripcion} </h4>
            <p class="card-text p-puntaje" id="puntaje${indice}">Puntaje: ${parseInt(
     puntajeTotal[indice].puntaje
   )}</p>

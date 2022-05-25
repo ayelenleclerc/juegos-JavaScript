@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <div class="container-fluid fondo encriptador-fondo">
+    <div class="h-100 container-fluid fondo encriptador-fondo">
 
         <header class="d-flex align-items-center justify-content-center header">
             <nav class="navbar navbar-expand-lg navbar-dark bg-transparent ">
@@ -34,13 +34,13 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item ">
-                                <a class="nav-link active" href="./adivinador.html">Adivinador</a>
+                                <a class="nav-link " href="./adivinador.html">Adivinador</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./memotest.html">Memotest</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./encriptador.html">Encriptador</a>
+                                <a class="nav-link active" href="./encriptador.html">Encriptador</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./ahorcado.html">Ahorcado</a>
@@ -55,7 +55,7 @@
         </header>
         <main>
             <section class="encriptador-main">
-                <h1 class="encriptador-title">Encriptador</h1>
+                <h1 class="header__title">Encriptador</h1>
             </section>
             <section class="text-input-sectionEncrip">
                 <textarea cols="40" rows="8" placeholder="ingrese el texto" id="inputUsuarioEncrip"
@@ -77,13 +77,14 @@
                 <button type="button" class=" btn copiarBtnEncrip ocultarBtnCopiarEncrip"
                     id="copiarBtnEncrip">Copiar</button>
             </section>
-            <section class="ranking-star">
+            <section class="ranking-star star-encriptador">
                 <div class="star-container" id="stars"><span>Puntuame: </span></div>
                 <div class="mostrar-valorStar" id="star-valor"></div>
             </section>
         </main>
-        <footer>
-            <p>&copy; Copyright 2022 - <a href="https://github.com/ayelenleclerc">Ayelen Leclerc</a></p>
+        <footer class="footer-encriptador">
+            <p class="footer-encriptador__a">&copy; Copyright 2022 - <a class="footer-encriptador__a"
+                    href="http://https://github.com/ayelenleclerc">Ayelen Leclerc</a></p>
         </footer>
     </div>
     <!-- Boostrap 5 -->
@@ -94,6 +95,7 @@
     <!-- Toastify -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- Mis scripts -->
+
     <script src="../js/star-ranking.js"></script>
     <script src="../js/encriptador.js"></script>
 

@@ -56,6 +56,7 @@ adivinadorInput.addEventListener("keyup", () => {
       showConfirmButton: false,
       timer: 1500,
     });
+    adivinadorInput.value = "";
   }
 });
 // despues de 8 segundos reinicio la pagina para que empiece de nuevo
