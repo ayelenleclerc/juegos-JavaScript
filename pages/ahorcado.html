@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Boostrap 5.2 -->
-    <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Kanit&family=Ubuntu:wght@400;700&display=swap"
+        rel="stylesheet">
     <!-- Estilos -->
     <link rel="stylesheet" href="../css/style.css">
-
-    <title>Encriptador de texto</title>
+    <title>Ranking</title>
 </head>
 
 <body>
-    <div class="container-fluid fondo encriptador-fondo">
-
+    <div class="container-fluid fondo ahorcado-fondo">
         <header class="d-flex align-items-center justify-content-center header">
             <nav class="navbar navbar-expand-lg navbar-dark bg-transparent ">
                 <div class="container-fluid">
@@ -54,48 +52,26 @@
             </nav>
         </header>
         <main>
-            <section class="encriptador-main">
-                <h1 class="encriptador-title">Encriptador</h1>
-            </section>
-            <section class="text-input-sectionEncrip">
-                <textarea cols="40" rows="8" placeholder="ingrese el texto" id="inputUsuarioEncrip"
-                    class="text-inputUsuarioEncrip"></textarea>
-                <h6 class="text-advertenciaEncrip">&#128073;solo letras minúsculas y sin acentos</h6>
-                <div>
-                    <button type="button" id="encriptar" class="btn btn-encriptar">Encriptar</button>
-                    <button type="button" id="desencriptar" class="btn btn-desencriptar">Desencriptar</button>
-                </div>
-            </section>
-            <section class="text-output-sectionEncrip">
-                <div id='mensajeVacioEncrip' class="mostrarMensajeVacioEncrip">
-                    <img class="ilustracionEncrip" src="../img/encriptador/munhieco.png"
-                        alt="Ilustración de un hombre con lupa">
-                    <h3>Ningún mensaje encontrado</h3>
-                    <p>Ingrese el texto que quiere encriptar o desencriptar.</p>
-                </div>
-                <textarea cols="18" rows="8" id="mostrarMensajeEncrip" class="text-outputUsuarioEncrip"></textarea>
-                <button type="button" class=" btn copiarBtnEncrip ocultarBtnCopiarEncrip"
-                    id="copiarBtnEncrip">Copiar</button>
-            </section>
-            <section class="ranking-star">
-                <div class="star-container" id="stars"><span>Puntuame: </span></div>
-                <div class="mostrar-valorStar" id="star-valor"></div>
-            </section>
+            <div class="ahorcado-main">
+                <h1 class="header__title-ahorcado">Ahoracado</h1>
+            </div>
+            <div id="app" class="row"></div>
+
+
         </main>
         <footer>
-            <p>&copy; Copyright 2022 - <a href="https://github.com/ayelenleclerc">Ayelen Leclerc</a></p>
+            <p>&copy; Copyright 2022 - <a href="https://github.com/ayelenleclerc">Ayelen Leclerc</a>
+            </p>
         </footer>
     </div>
-    <!-- Boostrap 5 -->
+
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
-    <!-- Toastify -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- Mis scripts -->
     <script src="../js/star-ranking.js"></script>
-    <script src="../js/encriptador.js"></script>
+    <script src="../js/ahorcado.js"></script>
 
 </body>
 
