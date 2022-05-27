@@ -16,7 +16,7 @@
         rel="stylesheet">
     <!-- Estilos -->
     <link rel="stylesheet" href="../css/style.css">
-    <title>Ranking</title>
+    <title>Ahorcado</title>
 </head>
 
 <body>
@@ -52,36 +52,71 @@
             </nav>
         </header>
         <main>
-            <div class="ahorcado-main">
-                <h1 class="header__title">Ahoracado</h1>
+
+            <div id="inicio" class="inicio-ahorcado">
+                <div id="titulo">
+                    <img class="imagen-ahorcado" width="65" heigth="65" src="../img/ahorcado/horca4.png">
+                    <h1 class="titulo-ahorcado">LA H&nbsp&nbsp&nbsp&nbspRCA</h1>
+                </div>
+                <div id="subtitulo">
+                    <h2 class="subtitulo-ahorcado">¡Descubre la palabra escondida y salvate de tu destino!</h2>
+                    <p id="instrucciones" class="p-ahorcado instrucciones-ahorcado">¡Agrega nuevas palabras!<br>Las
+                        mismas pueden
+                        tener entre 3 y
+                        17 letras. Puedes agregar más de una palabra por vez separándolas con la barra espaciadora.
+                        No se aceptan números ni caracteres especiales.</p>
+                </div>
             </div>
-            <div id="ahorcado-app" class="row"></div>
-            <img id="imagen" src="../img/ahorcado/img0.png" alt="Ahorcado" />
-            <div>
-                <p id="palabra_a_adivinar">
-                </p>
-                <button id="jugar">Obtener palabra</button>
-
-                <p id="resultado"></p>
-
-
-                <section class="ranking-star">
-                    <div class="star-container" id="stars"><span>Puntuame: </span></div>
-                    <div class="mostrar-valorStar" id="star-valor"></div>
-                </section>
+            <div id="contenedor" class="contenedor-ahorcado">
+                <div id="panel-botones" class="panel-botones-ahorcado">
+                    <button class="btn-ahorcado desplazar-original-ahorcado" id="boton-iniciar-juego">Iniciar
+                        juego</button>
+                    <div id="panel-agregar-palabra" class="panel-agregar-palabra-ahorcado">
+                        <input class="text-input-ahorcado desplazar-original-ahorcado" type="text"
+                            id="ingresar-nueva-palabra" placeholder="Escriba una nueva palabra">
+                        <button class="btn-ahorcado desplazar-original-ahorcado boton-agregar-palabra-ahorcado"
+                            id="boton-agregar-palabra">
+                            <p class="visible-ahorcado" id="texto-boton">Agregar palabras</p>
+                        </button>
+                    </div>
+                </div>
+                <div id="subcontenedor">
+                    <div class="panel-canvas-ahorcado" id="panel-canvas">
+                        <canvas class="canvas-ahorcado" id="pantalla"></canvas>
+                        <input id="input-teclado" class="input-teclado-ahorcado" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="teclado-ahorcado" id="teclado-ahorcado"></div>
+            <section class="ranking-star">
+                <div class="star-container" id="stars"><span>Puntuame: </span></div>
+                <div class="mostrar-valorStar" id="star-valor"></div>
+            </section>
         </main>
         <footer>
             <p>&copy; Copyright 2022 - <a href="https://github.com/ayelenleclerc">Ayelen Leclerc</a>
             </p>
         </footer>
     </div>
+    <audio class="audio-ahorcado" id="audio1" controls>
+        <source type="audio/mp3" src="../assets/sonidosAhorcado/sfxboing.mp3">
+    </audio>
+    <audio class="audio-ahorcado" id="audio2" controls>
+        <source type="audio/mp3" src="../assets/sonidosAhorcado/sfxpop.mp3">
+    </audio>
+    <audio class="audio-ahorcado" id="audio3" controls>
+        <source type="audio/mp3" src="../assets/sonidosAhorcado/sfx-piano-fantasia2.mp3">
+    </audio>
+    <audio class="audio-ahorcado" id="audio4" controls>
+        <source type="audio/mp3" src="../assets/sonidosAhorcado/sfx-piano-mystery.mp3">
+    </audio>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
     <!-- Mis scripts -->
-
+    <script src="../js/fuegosArtificiales.js"></script>
     <script src="../js/star-ranking.js"></script>
     <script src="../js/ahorcado.js"></script>
 
