@@ -63,4 +63,4 @@ adivinadorInput.addEventListener("keyup", () => {
 
 setTimeout(() => {
   location.reload();
-}, 10000);
+}, 30000);

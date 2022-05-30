@@ -362,7 +362,7 @@
 .btn {
     border-radius: 10px;
     font-size: 24px;
-    width: 300px;
+    width: 15.5rem;
     padding: 10px;
     margin-right: 5px;
     border: 1px solid var(--dark-blue-300);
@@ -717,48 +717,14 @@ p {
 }
 
 
-
-/* EFECTOS */
-.invisible-ahorcado {
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
+.palabra-a-adivinar-ahorcado span {
+    color: #126bc4;
+    font-family: "Ubuntu",
+        sans-serif;
+    font-size: 36px;
+    display: inline-block;
+    margin: 0 5px;
 }
-
-.visible-ahorcado {
-    opacity: 1;
-    transition: all 0.5s ease-in-out;
-}
-
-.desplazar-izquierda-ahorcado {
-    transform: translate(-125px, 0);
-    box-shadow: 0px 5px 8px 0px rgb(20, 20, 20);
-    transition: all 1s ease-in-out;
-}
-
-.desplazar-derecha-ahorcado {
-    transform: translate(125px, 0);
-    box-shadow: 5px 5px 8px 0px rgb(20, 20, 20);
-    transition: all 1s ease-in-out;
-}
-
-.desplazar-original-ahorcado {
-    transform: translate(0px, 0px);
-    transition: all 1s ease-in-out;
-}
-
-.erratico-derecha-ahorcado {
-    transform: translate(-120px, 0px);
-    box-shadow: 0px 5px 8px 0px rgb(20, 20, 20);
-    transition: all 0.1s ease-in-out;
-}
-
-.erratico-izquierda-ahorcado {
-    transform: translate(-125px, 0px);
-    box-shadow: 0px 5px 8px 0px rgb(20, 20, 20);
-    transition: all 0.1s ease-in-out;
-}
-
-
 
 /* RANKING STAR */
 .ranking-star {
@@ -1037,63 +1003,66 @@ a {
     }
 
     /* AHORCADO */
-    .h2-ahorcado {
-        width: 250px;
+    .p-ahorcado {
+        max-width: 100%;
     }
 
-    .instrucciones-ahorcado {
-        width: 250px;
+    .panel-botones-ahorcado {
+        padding-top: 20px;
+
     }
 
-    .btn-ahorcado {
-        width: 150px;
-        height: 20px;
-        font-size: 11px;
+    .btn-ahorcado,
+    .juego-iniciado {
+        margin: 10px auto;
     }
 
-    .panel-agregar-palabra-ahorcado {
-        width: 150px;
-        height: 20px;
-        margin-top: 8px;
+    .contenedor-dibujo-ahorcado {
+        display: flex;
+        gap: 10px;
+        padding: 20px;
+        width: 90%;
+        min-height: 620px;
+        margin: 0 auto;
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.5);
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: flex-start;
+        justify-content: center;
+        align-items: center;
     }
 
-    .text-input-ahorcado {
-        width: 150px;
-        height: 20px;
-        font-size: 11px;
-        background-color: #EFF1FA;
-        border-color: #AAB2D5 2px solid;
-        outline: none;
+    .image-ahorcado {
+        width: 200px;
     }
 
-    .panel-canvas-ahorcado {
-        width: 250px;
-        margin-bottom: 6px;
-        padding: 3px;
-        align-content: center;
+    .teclado-ahorcado {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        justify-content: center;
+        align-items: flex-end;
     }
 
-    .canvas-ahorcado {
-        width: 240px;
-        height: 300px;
+    .letra-ahorcado {
+        font-size: 1.2rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 2px;
+        padding: 20px;
+
     }
 
-    .desplazar-izquierda-ahorcado {
-        transform: translate(-75px, 0);
+    .letra-usada {
+        font-size: 1.2rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 2px;
+        padding: 20px;
     }
-
-    .desplazar-derecha-ahorcado {
-        transform: translate(75px, 0);
-    }
-
-    .erratico-derecha-ahorcado {
-        transform: translate(-70px, 0);
-    }
-
-    .erratico-izquierda-ahorcado {
-        transform: translate(-75px, 0);
-    }
-
 
     /* RANKING STAR */
 
@@ -1332,61 +1301,62 @@ a {
     }
 
     /* AHORCADO */
-    .h2-ahorcado {
-        width: 250px;
+    .p-ahorcado {
+        max-width: 100%;
     }
 
-    .instrucciones-ahorcado {
-        width: 250px;
+    .panel-botones-ahorcado {
+        padding-top: 20px;
+
     }
 
-    .btn-ahorcado {
-        width: 150px;
-        height: 20px;
-        font-size: 11px;
+    .btn-ahorcado,
+    .juego-iniciado {
+        margin: 10px auto;
     }
 
-    .panel-agregar-palabra-ahorcado {
-        width: 150px;
-        height: 20px;
-        margin-top: 8px;
+    .contenedor-dibujo-ahorcado {
+        display: flex;
+        gap: 10px;
+        padding: 20px;
+        width: 90%;
+        min-height: 620px;
+        margin: 0 auto;
+        flex-direction: row;
+        align-content: flex-start;
+        justify-content: center;
+        align-items: center;
     }
 
-    .text-input-ahorcado {
-        width: 150px;
-        height: 20px;
-        font-size: 11px;
-        background-color: #EFF1FA;
-        border-color: #AAB2D5 2px solid;
-        outline: none;
+    .image-ahorcado {
+        width: 200px;
     }
 
-    .panel-canvas-ahorcado {
-        width: 250px;
-        margin-bottom: 6px;
-        padding: 3px;
-        align-content: center;
+    .teclado-ahorcado {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        justify-content: center;
+        align-items: flex-end;
     }
 
-    .canvas-ahorcado {
-        width: 240px;
-        height: 300px;
+    .letra-ahorcado {
+        font-size: 1.2rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 2px;
+        padding: 20px;
+
     }
 
-    .desplazar-izquierda-ahorcado {
-        transform: translate(-75px, 0);
-    }
-
-    .desplazar-derecha-ahorcado {
-        transform: translate(75px, 0);
-    }
-
-    .erratico-derecha-ahorcado {
-        transform: translate(-70px, 0);
-    }
-
-    .erratico-izquierda-ahorcado {
-        transform: translate(-75px, 0);
+    .letra-usada {
+        font-size: 1.2rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 2px;
+        padding: 20px;
     }
 
     /* RANKING STAR */
@@ -1542,61 +1512,376 @@ a {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 850px) {
 
-    .h2-ahorcado {
-        width: 330px;
+
+    /* INDEX */
+    .main-title {
+        font-size: 2rem;
     }
 
-    .instrucciones-ahorcado {
-        width: 330px;
+    /* ADIVINADOR */
+    .main-adivinador {
+        min-height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
 
-    .btn-ahorcado {
-        width: 200px;
-        height: 30px;
-        font-size: 13px;
+    .adivinador-input p {
+        font-size: 1rem;
+        top: 8rem;
     }
 
-    .panel-agregar-palabra-ahorcado {
-        width: 200px;
-        height: 40px;
-        margin-top: 10px;
+    .resultado-Adivinador p {
+        font-size: 1.5rem;
     }
 
-    .text-input-ahorcado {
-        width: 200px;
-        height: 30px;
-        font-size: 13px;
-        border: #AAB2D5 1px solid;
-        outline: none;
+    /* MEMOTEST */
+    .grilla-memotest {
+        width: 100%;
+        position: relative;
+        top: 0rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
-    .panel-canvas-ahorcado {
-        width: 330px;
-        margin-bottom: 8px;
-        padding: 4px;
+    .memotest-container {
+        display: flex;
+        position: absolute;
+        height: 100vh;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+
+    /* ENCRIPTADOR */
+
+    .text-inputUsuarioEncrip {
+        width: 100%;
+        height: 200px
+    }
+
+    .text-output-sectionEncrip {
+        position: relative;
+        width: 100%;
+        height: 350px;
+        right: 0;
+    }
+
+    .btn {
+        margin: 5px 14%;
+        font-size: 1.5rem;
+        width: 75%;
+        padding: 10px;
+    }
+
+    .text-outputUsuarioEncrip {
+        width: 90%;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .mostrarMensajeVacioEncrip {
+        position: relative;
+        width: 90%;
+
+        margin: 0 auto;
+    }
+
+    .ilustracionEncrip {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+
+    .mostrarMensajeVacioEncrip h3,
+    p {
+        font-size: 20px;
+        background-color: transparent;
+        text-align: center;
+    }
+
+
+    .ocultarBtnCopiarEncrip {
+        margin: 0 auto;
+    }
+
+    /* AHORCADO */
+    .p-ahorcado {
+        max-width: 100%;
+    }
+
+    .btn-ahorcado,
+    .juego-iniciado {
+        margin: 10px;
+    }
+
+    .contenedor-dibujo-ahorcado {
+        display: flex;
+        gap: 10px;
+        padding: 20px;
+        width: 90%;
+        min-height: 500px;
+        margin: 0 auto;
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.5);
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: flex-start;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-ahorcado {
+        width: 250px;
+    }
+
+    .teclado-ahorcado {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .letra-ahorcado {
+        font-size: 1.5rem;
+        width: 2rem;
+        height: 2rem;
+        margin: 2px;
+        padding: 20px;
+
+    }
+
+    .letra-usada {
+        font-size: 1.5rem;
+        width: 2rem;
+        height: 2rem;
+        margin: 5px;
+        padding: 20px;
+    }
+
+    /* RANKING STAR */
+    .ranking-star {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        height: 12%;
+    }
+
+    .star-encriptador {
+        height: 50%;
+        width: 50%;
+        display: flex;
+        bottom: -3rem;
+        left: 0rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    /* RANKING */
+
+    .ranking-fondo {
+        width: 100vw;
+        height: 100vh;
+        background-color: #0c0c0c;
+
+    }
+
+    .header__title-ranking {
+        font-family: 'Inter',
+            sans-serif;
+        color: #fff;
+        font-size: 3rem;
+        text-align: center;
+
+    }
+
+    .ranking-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .ranking {
+        font-family: 'Inter',
+            sans-serif;
+        color: #fff;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .card-puntaje {
+        position: relative;
+        display: flex;
+        width: 250px;
+        height: 400px;
+        background-color: #f7f5f7;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgb(0 0 0 / 50%);
+        margin: 20px;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-title__puntaje {
+
+        color: #0c0c0c;
+        font-size: 2rem;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .card-title__puntaje {
+
+        color: #0c0c0c;
+        font-size: 2rem;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .img-puntaje {
+        position: absolute;
+        top: 50px;
+        width: 150px;
+        height: 150px;
+        align-self: center;
+    }
+
+    .h4-puntaje {
+        position: relative;
+        top: 8rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0px auto;
+    }
+
+    .p-puntaje {
+        position: absolute;
+        top: 20rem;
+        align-self: center;
+        font-size: 1.5rem;
+        color: black;
+        margin: 0 15%;
+    }
+
+    .btn-puntaje {
+        position: absolute;
+        width: 100%;
+        padding: 0;
+        bottom: -5px;
+        left: -35px;
+        height: 41px;
+        box-shadow: 0px 0px 10px rgb(0 0 0 / 50%);
+    }
+
+    /* FOOTER */
+    footer {
+        position: relative;
+    }
+
+    footer p,
+    a {
+        font-size: 0.8rem;
+    }
+
+    .footer-encriptador {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        bottom: 0;
+        left: 0;
+        flex-direction: row;
         align-content: center;
     }
 
-    .canvas-ahorcado {
-        width: 320px;
-        height: 400px;
+    .footer-memotest {
+        position: relative;
+        bottom: 0;
+    }
+}
+
+@media screen and (min-width: 850px) {
+
+    /* AHORCADO */
+    .p-ahorcado {
+        max-width: 100%;
     }
 
-    .desplazar-izquierda-ahorcado {
-        transform: translate(-100px, 0);
+    .btn-ahorcado,
+    .juego-iniciado {
+        margin: 10px;
     }
 
-    .desplazar-derecha-ahorcado {
-        transform: translate(100px, 0);
+    .contenedor-dibujo-ahorcado {
+        display: flex;
+        gap: 10px;
+        padding: 20px;
+        width: 90%;
+        min-height: 500px;
+        margin: 5px auto;
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.5);
+        flex-flow: row wrap;
+        place-content: flex-start center;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: center;
     }
 
-    .erratico-derecha-ahorcado {
-        transform: translate(-95px, 0);
+    .image-ahorcado {
+        width: 250px;
     }
 
-    .erratico-izquierda-ahorcado {
-        transform: translate(-100px, 0);
+    .teclado-ahorcado {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .letra-ahorcado {
+        font-size: 1.5rem;
+        width: 2rem;
+        height: 2rem;
+        margin: 2px;
+        padding: 20px;
+
+    }
+
+    .letra-usada {
+        font-size: 1.5rem;
+        width: 2rem;
+        height: 2rem;
+        margin: 5px;
+        padding: 20px;
     }
 }
