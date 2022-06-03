@@ -52,7 +52,7 @@ let imagen = document.getElementById("imagen");
 //FUNCIONES
 
 //Traigo la lista de palabras del JSON
-fetch("../js/palabrasAhorcado.json")
+fetch("./palabrasAhorcado.json")
   .then((res) => res.json())
   .then((palabrasAhorcado) => {
     palabrasAhorcado.forEach((palabrasAhorcado) => {
