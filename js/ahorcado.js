@@ -52,21 +52,13 @@ let imagen = document.getElementById("imagen");
 //FUNCIONES
 
 //Traigo la lista de palabras del JSON
-const response = fetch(
-  "https://github.com/ayelenleclerc/palabrasAhorcado/blob/main/palabrasAhorcado.json",
-  {
-    mode: "no-cors",
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }
-);
-
-const data = await response.json();
-listasDepalabras = data.palabras;
-
-guardarPalabra();
+fetch("../js/palabrasAhorcado.json")
+  .then((res) => res.json())
+  .then((palabrasAhorcado) => {
+    palabrasAhorcado.forEach((palabrasAhorcado) => {
+      listasDepalabras.push(palabrasAhorcado);
+    });
+  });
 console.log(listasDepalabras); //verificacion de que funciona fetch
 
 //Traigo el abecedario para crear los botones
