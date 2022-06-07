@@ -52,7 +52,7 @@ let imagen = document.getElementById("imagen");
 //FUNCIONES
 
 //Traigo la lista de palabras del JSON
-const response = await fetch(
+const response = fetch(
   "https://github.com/ayelenleclerc/palabrasAhorcado/blob/main/palabrasAhorcado.json",
   {
     mode: "no-cors",
