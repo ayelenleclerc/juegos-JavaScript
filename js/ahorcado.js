@@ -37,6 +37,7 @@ let palabrita = "";
 let cant_aciertos = 0;
 let cant_errores = 0;
 //LLAMADOS AL DOM
+
 let teclado = document.getElementById("teclado");
 let espacios = document.getElementById("palabra-a-adivinar");
 let btn_jugar = document.getElementById("jugar");
