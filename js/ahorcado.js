@@ -84,23 +84,38 @@ function guardarPalabra() {
   input_Usu.addEventListener("change", (e) => {
     let input_newPalabra = document.getElementById("input").value.toUpperCase();
     input_Usu.textContent = e.target.value.toUpperCase();
-    listasDepalabras.push(input_newPalabra);
-    input_Usu.classList.remove("visible-ahorcado");
-    input_Usu.classList.add("invisible-ahorcado");
-    Toastify({
-      text: "Palabra guardada! Puede iniciar el juego!",
-      duration: 3000,
-      close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "right", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
-      },
-      onClick: function () {}, // Callback after click
-    }).showToast();
+    if (e.target.value == String) {
+      listasDepalabras.push(input_newPalabra);
+      input_Usu.classList.remove("visible-ahorcado");
+      input_Usu.classList.add("invisible-ahorcado");
+      Toastify({
+        text: "Palabra guardada! Puede iniciar el juego!",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function () {}, // Callback after click
+      }).showToast();
 
-    audioing.play(btn_agregar);
+      audioing.play(btn_agregar);
+    } else {
+      Toastify({
+        text: "Ingrese una palabra!",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function () {}, // Callback after click
+      }).showToast();
+    }
   });
 }
 console.log(listasDepalabras); // verificacion de que las guarda
